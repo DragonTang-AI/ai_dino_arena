@@ -1,0 +1,63 @@
+{
+  "name": "ai-dino-arena",
+  "version": "1.0.0",
+  "description": "AI Dino Arena - 智能恐龙游戏网站，集成强化学习的Chrome恐龙游戏复刻版",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend/ai-dino-arena && npm run dev\"",
+    "build": "cd frontend/ai-dino-arena && npm run build",
+    "train": "cd ai_trainer && python train.py",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend/ai-dino-arena && npm test",
+    "test:backend": "cd backend && npm test",
+    "install:all": "npm install && cd frontend/ai-dino-arena && npm install && cd ../../backend && npm install",
+    "clean": "rm -rf frontend/ai-dino-arena/dist backend/node_modules frontend/ai-dino-arena/node_modules node_modules"
+  },
+  "keywords": [
+    "ai",
+    "game",
+    "dino",
+    "chrome",
+    "reinforcement-learning",
+    "q-learning",
+    "react",
+    "nodejs",
+    "websocket",
+    "machine-learning"
+  ],
+  "author": "AI Dino Arena Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-dino-arena.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ai-dino-arena/issues"
+  },
+  "homepage": "https://github.com/your-username/ai-dino-arena#readme",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0",
+    "python": ">=3.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {},
+  "directories": {
+    "frontend": "frontend/ai-dino-arena",
+    "backend": "backend",
+    "ai": "ai_trainer",
+    "assets": "assets",
+    "docs": "docs"
+  },
+  "config": {
+    "ports": {
+      "frontend": 5173,
+      "backend": 3001,
+      "ai_websocket": 8765
+    }
+  }
+}
+
